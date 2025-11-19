@@ -1,4 +1,4 @@
-package org.example.notificationservice;
+package org.example.notificationservice.service;
 
 import org.example.notificationservice.domain.Notification;
 import org.example.notificationservice.dto.CreateNotificationRequest;
@@ -6,7 +6,6 @@ import org.example.notificationservice.dto.NotificationResponse;
 import org.example.notificationservice.events.OperationType;
 import org.example.notificationservice.events.UserEvent;
 import org.example.notificationservice.mapper.NotificationMapper;
-import org.example.notificationservice.service.NotificationService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

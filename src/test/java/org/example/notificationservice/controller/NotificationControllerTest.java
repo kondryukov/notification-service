@@ -1,7 +1,6 @@
-package org.example.notificationservice;
+package org.example.notificationservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.notificationservice.controller.NotificationController;
 import org.example.notificationservice.dto.CreateNotificationRequest;
 import org.example.notificationservice.dto.NotificationResponse;
 import org.example.notificationservice.events.OperationType;

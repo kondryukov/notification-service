@@ -1,4 +1,4 @@
-package org.example.notificationservice;
+package org.example.notificationservice.messaging;
 
 import org.example.notificationservice.events.OperationType;
 import org.example.notificationservice.events.UserEvent;

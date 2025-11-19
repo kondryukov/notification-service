@@ -1,11 +1,10 @@
-package org.example.notificationservice;
+package org.example.notificationservice.mapper;
 
 import org.example.notificationservice.domain.Notification;
 import org.example.notificationservice.dto.CreateNotificationRequest;
 import org.example.notificationservice.dto.NotificationResponse;
 import org.example.notificationservice.events.OperationType;
 import org.example.notificationservice.events.UserEvent;
-import org.example.notificationservice.mapper.NotificationMapper;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

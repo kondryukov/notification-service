@@ -1,6 +1,5 @@
-package org.example.notificationservice;
+package org.example.notificationservice.exception.handler;
 
-import org.example.notificationservice.exception.handler.GlobalExceptionHandler;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
