@@ -50,11 +50,11 @@ class NotificationControllerTest {
     @Test
     void createNotificationWrongOperation() throws Exception {
         String body = """
-        {
-          "email": "name@mail.ru",
-          "operation": "wrongOperation"
-        }
-        """;
+                {
+                  "email": "name@mail.ru",
+                  "operation": "wrongOperation"
+                }
+                """;
 
         mockMvc.perform(post("/notification/create")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -65,7 +65,7 @@ class NotificationControllerTest {
 
     @Test
     void createNotificationInvalidEmail() throws Exception {
-        var request = new CreateNotificationRequest("wrongEmail",  OperationType.CREATE);
+        var request = new CreateNotificationRequest("wrongEmail", OperationType.CREATE);
         mockMvc.perform(post("/notification/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
@@ -76,10 +76,10 @@ class NotificationControllerTest {
     @Test
     void damagedJSON() throws Exception {
         String body = """
-        {
-        email: name@mail.ru
-        }
-        """;
+                {
+                    email: name@mail.ru
+                }
+                """;
 
         mockMvc.perform(post("/notification/create")
                         .contentType(MediaType.APPLICATION_JSON)

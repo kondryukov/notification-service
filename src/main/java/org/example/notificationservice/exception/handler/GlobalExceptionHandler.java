@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
     public ProblemDetail handleBodyValidation(MethodArgumentNotValidException exception) {
         ProblemDetail problemDetail = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
         problemDetail.setDetail("Validation failed");
-        problemDetail.setType(URI.create("http://localhost:8081/users/error/bad-request"));
+        problemDetail.setType(URI.create("http://localhost:8081/notification/error/bad-request"));
         List<Map<String, String>> list = new ArrayList<>();
         for (FieldError fieldError : exception.getBindingResult().getFieldErrors()) {
             Map<String, String> field = Map.of("field", fieldError.getField(), "message", fieldError.getDefaultMessage());
@@ -38,7 +38,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ProblemDetail handleInvalidBody(HttpMessageNotReadableException exception) {
         ProblemDetail problemDetail = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
-        problemDetail.setType(URI.create("http://localhost:8081/users/error/bad-request"));
+        problemDetail.setType(URI.create("http://localhost:8081/notification/error/bad-request"));
         if (exception.getCause() instanceof InvalidFormatException ife && ife.getTargetType() == OperationType.class) {
             problemDetail.setDetail("Incorrect format");
             List<Map<String, String>> list = new ArrayList<>();
@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
     public ProblemDetail handleUnexpected() {
         ProblemDetail problemDetail = ProblemDetail.forStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         problemDetail.setDetail("Unexpected error");
-        problemDetail.setType(URI.create("http://localhost:8081/users/error/internal-server"));
+        problemDetail.setType(URI.create("http://localhost:8081/notification/error/internal-server"));
         return problemDetail;
     }
 }
